@@ -18,13 +18,16 @@ var president = new BasicCard("Who was the first president of the United States?
 
 function ClozeCard (fullText, deletion){
 	this.fullText = fullText;
-	this.deletion = deletion;
+	this.deletion = deletion;  
 	this.ask = function(){
 		var partial = this.fullText.replace(deletion, "_______________");
 		console.log(partial);
-	} 
+		} 
 	this.answer = function(){
 		console.log(deletion);
+		}
+	this.allText = function(){
+		console.log(this.fullText);
 	}
 }
 
@@ -33,3 +36,7 @@ function ClozeCard (fullText, deletion){
 var os = new ClozeCard ("Windows 10 is the operative sistem on this computer", "Windows 10");
 
 os.ask();
+console.log("===================================================");
+os.answer();
+console.log("++++++++++++++++++++++++++++++++++++++++++++++++++++");
+os.allText();
